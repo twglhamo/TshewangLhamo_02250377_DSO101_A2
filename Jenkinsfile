@@ -30,21 +30,21 @@ pipeline {
         stage('Install') {
             steps {
                 echo '========== Installing npm dependencies =========='
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build') {
             steps {
                 echo '========== Running build script =========='
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
                 echo '========== Running tests with JUnit reporting =========='
-                sh 'npm test'
+                bat 'npm test'
             }
             post {
                 always {
@@ -59,12 +59,12 @@ pipeline {
                 echo '========== Building and pushing Docker image =========='
                 script {
                     // Build the Docker image
-                    docker.build("${twglhamo}:${02250377}")
+                    docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
 
                     // Push to Docker Hub using stored credentials
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
-                        docker.image("${twglhamo}:${02250377}").push()
-                        echo "Successfully pushed ${twglhamo}:${02250377} to Docker Hub"
+                        docker.image("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}").push()
+                        echo "Successfully pushed ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} to Docker Hub"
                     }
                 }
             }
