@@ -8,7 +8,7 @@ pipeline {
     environment {
         // Docker Hub configuration
         DOCKER_HUB_USERNAME = "twglhamo"  // Replace with your Docker Hub username
-        DOCKER_IMAGE_NAME = "${02250377}/node-todo-app"
+        DOCKER_IMAGE_NAME = "${DOCKER_HUB_USERNAME}/node-todo-app"
         DOCKER_IMAGE_TAG = "latest"
     }
 
@@ -18,8 +18,11 @@ pipeline {
                 echo '========== Checking out code from GitHub =========='
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: 'https://github.com/twglhamo/TshewangLhamo_02250377_DSO101_A2.git']]
+                    branches: [[name: 'main']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false]],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/twglhamo/TshewangLhamo_02250377_DSO101_A2.git']]
                 ])
             }
         }
