@@ -1,4 +1,4 @@
-# 📘 DSO101 Assignment II: CI/CD Pipeline with Jenkins
+# DSO101 Assignment II: CI/CD Pipeline with Jenkins
 
 **Student:** Tshewang Lhamo  
 **Student ID:** 02250377  
@@ -6,11 +6,11 @@
 **Assignment:** Continuous Integration and Continuous Deployment (CI/CD)  
 **Date Submitted:** May 9, 2026
 
-> **⚠️ Security Note:** Never commit real GitHub tokens, Docker Hub passwords, or any other secrets to version control. Always use environment variables, credential managers, or CI/CD platform credential systems (like Jenkins Credentials) to store sensitive data. The examples shown use placeholder values only.
+> ** Security Note:** Never commit real GitHub tokens, Docker Hub passwords, or any other secrets to version control. Always use environment variables, credential managers, or CI/CD platform credential systems (like Jenkins Credentials) to store sensitive data. The examples shown use placeholder values only.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This assignment demonstrates the implementation of a **Continuous Integration/Continuous Deployment (CI/CD) pipeline** using Jenkins to automate the build, test, and deployment of a Node.js to-do list application.
 
@@ -27,7 +27,7 @@ This eliminates manual work and ensures code quality before deployment.
 
 ---
 
-## 🛠 Tools & Technologies Used
+## Tools & Technologies Used
 
 | Tool | Purpose | Version |
 |------|---------|---------|
@@ -42,7 +42,7 @@ This eliminates manual work and ensures code quality before deployment.
 
 ---
 
-## 📋 Step 1: Set Up GitHub Personal Access Token (PAT)
+##  Step 1: Set Up GitHub Personal Access Token (PAT)
 
 The first step is to create a GitHub Personal Access Token (PAT) so Jenkins can securely access your repository.
 
@@ -61,7 +61,7 @@ The first step is to create a GitHub Personal Access Token (PAT) so Jenkins can 
 
 ---
 
-## 🔧 Step 2: Install Jenkins Plugins
+## Step 2: Install Jenkins Plugins
 
 Jenkins requires specific plugins to work with Node.js, Docker, and GitHub. These plugins extend Jenkins's functionality.
 
@@ -84,7 +84,7 @@ Jenkins requires specific plugins to work with Node.js, Docker, and GitHub. Thes
 
 ---
 
-## ⚙️ Step 3: Configure Node.js in Jenkins Tools
+## Step 3: Configure Node.js in Jenkins Tools
 
 After installing the NodeJS plugin, you need to configure the Node.js version that Jenkins will use.
 
@@ -104,7 +104,7 @@ After installing the NodeJS plugin, you need to configure the Node.js version th
 
 ---
 
-## 🔐 Step 4: Add GitHub Credentials to Jenkins
+## Step 4: Add GitHub Credentials to Jenkins
 
 Jenkins needs your GitHub username and PAT to authenticate with your repository.
 
@@ -136,7 +136,7 @@ Jenkins needs your GitHub username and PAT to authenticate with your repository.
 
 ---
 
-## 🐳 Step 5: Add Docker Hub Credentials to Jenkins
+## Step 5: Add Docker Hub Credentials to Jenkins
 
 Similarly, Jenkins needs Docker Hub credentials to push the Docker image.
 
@@ -162,7 +162,7 @@ Similarly, Jenkins needs Docker Hub credentials to push the Docker image.
 
 ---
 
-## 🚀 Step 6: Create a New Pipeline Job in Jenkins
+## Step 6: Create a New Pipeline Job in Jenkins
 
 Now we create the actual Jenkins job that will run our CI/CD pipeline.
 
@@ -183,7 +183,7 @@ Now we create the actual Jenkins job that will run our CI/CD pipeline.
 
 ---
 
-## 📝 Step 7: Configure Pipeline Settings
+## Step 7: Configure Pipeline Settings
 
 After creating the job, you need to configure where the Jenkinsfile is located (in your GitHub repository).
 
@@ -210,7 +210,7 @@ After creating the job, you need to configure where the Jenkinsfile is located (
 
 ---
 
-## ✅ Step 8: Run the Pipeline
+## Step 8: Run the Pipeline
 
 Now it's time to execute the pipeline!
 
@@ -238,20 +238,20 @@ The pipeline will execute these stages in order:
 ![Jenkins Build #6 - All Stages Passed](./image/9.png)
 
 **What this shows:** Jenkins build #6 with all stages completed successfully (all green checkmarks):
-- ✅ Checkout SCM (3s)
-- ✅ Tool Install (0.14s)
-- ✅ Checkout (2s)
-- ✅ Install (1m 8s) - npm install
-- ✅ Build (48s) - npm run build
-- ✅ Test (3s) - npm test with Jest
-- ✅ Deploy (1m 17s) - Docker build and push
-- ✅ Post Actions (0.2s)
+-  Checkout SCM (3s)
+-  Tool Install (0.14s)
+-  Checkout (2s)
+-  Install (1m 8s) - npm install
+-  Build (48s) - npm run build
+-  Test (3s) - npm test with Jest
+-  Deploy (1m 17s) - Docker build and push
+-  Post Actions (0.2s)
 
-**Build Status:** Finished: SUCCESS ✅
+**Build Status:** Finished: SUCCESS 
 
 ---
 
-## 🐳 Step 9: Verify Docker Image on Docker Hub
+## Step 9: Verify Docker Image on Docker Hub
 
 After successful deployment, your Docker image is pushed to Docker Hub. You can verify it was uploaded correctly.
 
@@ -275,7 +275,7 @@ This confirms the Docker image was successfully built and pushed by Jenkins.
 
 ---
 
-## 📊 Step 10: View Pipeline Dashboard and Build History
+## Step 10: View Pipeline Dashboard and Build History
 
 The Jenkins pipeline dashboard provides a visual overview of all your builds and their statuses.
 
@@ -298,32 +298,32 @@ The Jenkins pipeline dashboard provides a visual overview of all your builds and
   - Install stage timing
   - Build, Test, Deploy stages with their durations
 - **Build History:** Shows builds #1 through #6
-  - ✅ Build #6: 5:09 AM (Success)
-  - ❌ Build #5: 5:06 AM (Failed - "No Changes")
-  - ❌ Build #4, #3, #2, #1: Earlier attempts
+  -  Build #6: 5:09 AM (Success)
+  -  Build #5: 5:06 AM (Failed - "No Changes")
+  -  Build #4, #3, #2, #1: Earlier attempts
 - **Average stage times** showing pipeline performance metrics
 
 ---
 
-## 📁 Project File Structure
+##  Project File Structure
 
 Your complete project includes these essential files:
 
 ```
-📦 TshewangLhamo_02250377_DSO101_A2/
-├── 📄 app.js                 (Main Node.js application)
-├── 📄 app.test.js            (Jest unit tests)
-├── 📄 package.json           (Dependencies and scripts)
-├── 📄 Dockerfile             (Container definition)
-├── 📄 Jenkinsfile            (CI/CD pipeline definition)
-├── 📄 .gitignore             (Git ignore rules)
-├── 📄 README.md              (This file)
-├── 📁 coverage/              (Test coverage reports)
+ TshewangLhamo_02250377_DSO101_A2/
+├──  app.js                 (Main Node.js application)
+├──  app.test.js            (Jest unit tests)
+├──  package.json           (Dependencies and scripts)
+├──  Dockerfile             (Container definition)
+├──  Jenkinsfile            (CI/CD pipeline definition)
+├──  .gitignore             (Git ignore rules)
+├──  README.md              (This file)
+├──  coverage/              (Test coverage reports)
 │   ├── clover.xml
 │   ├── coverage-final.json
 │   ├── lcov.info
 │   └── lcov-report/          (HTML coverage report)
-└── 📁 image/                 (Screenshots for documentation)
+└──  image/                 (Screenshots for documentation)
     ├── 1.png  (GitHub PAT Creation)
     ├── 2.png  (Jenkins Plugins)
     ├── 3.png  (NodeJS Tool Configuration)
@@ -339,7 +339,7 @@ Your complete project includes these essential files:
 
 ---
 
-## 📝 Key Configuration Files
+##  Key Configuration Files
 
 ### package.json
 ```json
@@ -431,10 +431,10 @@ pipeline {
     
     post {
         success {
-            echo '✅ Pipeline completed successfully!'
+            echo ' Pipeline completed successfully!'
         }
         failure {
-            echo '❌ Pipeline failed. Check logs above.'
+            echo ' Pipeline failed. Check logs above.'
         }
     }
 }
@@ -471,7 +471,7 @@ CMD ["node", "app.js"]
 
 ---
 
-## 🎯 Pipeline Execution Flow
+## Pipeline Execution Flow
 
 ```
 Developer pushes code to GitHub
@@ -501,35 +501,35 @@ Pipeline completes (SUCCESS)
 
 ---
 
-## 🧪 Test Results
+##  Test Results
 
 The Jest test suite includes 3 tests:
 
 ```javascript
 describe('Todo App Tests', () => {
   test('should add a todo item', () => {
-    // Test passes ✅
+    // Test passes 
   });
 
   test('should complete a todo item', () => {
-    // Test passes ✅
+    // Test passes 
   });
 
   test('should delete a todo item', () => {
-    // Test passes ✅
+    // Test passes 
   });
 });
 ```
 
 **Test Results:**
-- ✅ Test Suites: 1 passed
-- ✅ Tests: 3 passed
-- ✅ JUnit Report: junit.xml generated successfully
-- ✅ Jenkins Integration: Test results displayed in Jenkins UI
+-  Test Suites: 1 passed
+-  Tests: 3 passed
+-  JUnit Report: junit.xml generated successfully
+-  Jenkins Integration: Test results displayed in Jenkins UI
 
 ---
 
-## 🚨 Challenges Faced and Solutions
+##  Challenges Faced and Solutions
 
 ### Challenge 1: Jenkins NodeJS Plugin Configuration
 **Problem:** Tests were failing in Jenkins with "npm: command not found" even though npm worked locally.
@@ -622,9 +622,9 @@ describe('Todo App Tests', () => {
 
 ---
 
-## 📊 Deliverables Summary
+## Deliverables Summary
 
-### ✅ Screenshots (11 Total)
+### Screenshots (11 Total)
 1. GitHub PAT Creation - Step 1
 2. Jenkins Plugins Installation - Step 2
 3. Jenkins NodeJS Tool Configuration - Step 3
@@ -637,19 +637,19 @@ describe('Todo App Tests', () => {
 10. Docker Hub Repository Confirmation - Step 9
 11. Jenkins Pipeline Dashboard - Step 10
 
-### ✅ GitHub Repository
+### GitHub Repository
 - **URL:** https://github.com/twglhamo/TshewangLhamo_02250377_DSO101_A2
 - **Branch:** main
 - **Files:** app.js, app.test.js, package.json, Dockerfile, Jenkinsfile, .gitignore, README.md
 
-### ✅ Docker Hub
+### Docker Hub
 - **Repository:** twglhamo/node-todo-app
 - **Image Tag:** latest
 - **Status:** Public, accessible to everyone
 
 ---
 
-## 🔍 How to Use This Guide for Your Assignment
+## How to Use This Guide for Your Assignment
 
 If you're following this guide to complete your own DSO101 Assignment II:
 
@@ -669,7 +669,7 @@ If you're following this guide to complete your own DSO101 Assignment II:
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning Outcomes
 
 By completing this assignment, you will understand:
 
@@ -685,7 +685,7 @@ These skills are fundamental to modern software development workflows used by co
 
 ---
 
-## 📚 References
+## References
 
 - [Jenkins Official Documentation](https://www.jenkins.io/doc/)
 - [Jest Testing Framework](https://jestjs.io/)
@@ -695,16 +695,8 @@ These skills are fundamental to modern software development workflows used by co
 
 ---
 
-## ✍️ Conclusion
+## Conclusion
 
 This assignment successfully demonstrates a complete CI/CD pipeline implementation. From code commit to Docker image deployment, every step is automated, tested, and monitored. This is the backbone of modern DevOps practices and is essential knowledge for any software engineer working in professional environments.
 
-**Final Build Status:** ✅ **SUCCESS**  
-**Docker Image:** ✅ **Published to Docker Hub**  
-**Test Coverage:** ✅ **All Tests Passing**
 
----
-
-*Assignment completed on May 9, 2026*  
-*Royal University of Bhutan - Faculty of Engineering*  
-*DSO101: Continuous Integration and Continuous Deployment*
